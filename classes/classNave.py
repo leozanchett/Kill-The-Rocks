@@ -26,6 +26,17 @@ class NavePrincipal(pygame.sprite.Sprite):
             self.rect.y -= 5
         if keys[pygame.K_SPACE]:
             self.somAtaque()
+        self.colisao()
+
+    def colisao(self):
+        if self.rect.top < 0:
+            self.rect.top = 0
+        elif self.rect.bottom > 480:
+            self.rect.bottom = 480
+        if self.rect.left < 0:
+            self.rect.left = 0
+        elif self.rect.right > 420:
+            self.rect.right = 420
 
     def somAtaque(self):
         self.ataqueSom.set_volume(0.09)
