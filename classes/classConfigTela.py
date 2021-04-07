@@ -1,3 +1,5 @@
+import sys
+
 import pygame
 from uteis.style import CINZA_CLARO
 
@@ -11,3 +13,7 @@ class ConfigTela:
 
     def corTelaDefault(self):
         self.display.fill(CINZA_CLARO)
+
+    def fecharJogo(self):
+        pygame.quit()
+        sys.exit()
