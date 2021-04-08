@@ -8,11 +8,11 @@ class MotherShip(pygame.sprite.Sprite):
 
     def __init__(self, *groups):
         super().__init__(*groups)
-        self.image = pygame.image.load(self.nave())
+        self.image = pygame.image.load(self.spritenave())
         # redimensiona a imagem.
         self.image = pygame.transform.scale(self.image, [100, 100])
         self.rect = pygame.Rect(50, 50, 100, 100)
-        self.ataqueSom = pygame.mixer.Sound(self.carregaataque())
+        self.ataqueSom = pygame.mixer.Sound(self.dirsomataque())
         self.speed = 0
         self.aceleration = 0.1
 
@@ -24,7 +24,7 @@ class MotherShip(pygame.sprite.Sprite):
             self.movimentonave(keys)
         else:
             self.speed *= 0.95
-        self.colisao()
+        self.verificacolisao()
 
     def movimentonave(self, _akey):
         self.speed += self.aceleration
@@ -39,12 +39,15 @@ class MotherShip(pygame.sprite.Sprite):
         if _akey[pygame.K_w]:
             self.rect.y -= self.speed
 
-    def colisao(self):
+    def verificacolisao(self):
         if self.rect.top < 0:
+            self.speed = self.speed / 2
             self.rect.top = 0
         elif self.rect.bottom > 480:
+            self.speed = self.speed / 2
             self.rect.bottom = 480
         if self.rect.left < 0:
+            self.speed = self.speed / 2
             self.rect.left = 0
         elif self.rect.right > 420:
             self.rect.right = 420
@@ -54,9 +57,9 @@ class MotherShip(pygame.sprite.Sprite):
         self.ataqueSom.play()
 
     @classmethod
-    def carregaataque(cls):
+    def dirsomataque(cls):
         return Path().cwd().as_posix() + '/'+cls.diretorioSom+'/silencer.wav'
 
     @classmethod
-    def nave(cls):
+    def spritenave(cls):
         return Path().cwd().as_posix() + '/'+cls.diretorioImg+'/naveprincipal.png'
