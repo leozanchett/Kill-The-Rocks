@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f284df0d-619d-49c4-83c8-16556f985316" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/classConfigTela.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/classConfigTela.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/classNave.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/classNave.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -27,19 +27,16 @@ class MotherShip(pygame.sprite.Sprite):
         self.colisao()
 
     def movimentonave(self, _akey):
-        if self.aceleration < 0:
-            self.speed = 0
+        self.speed += self.aceleration
+        if self.speed > 6:
+            self.speed = 6
         if _akey[pygame.K_d]:
-            self.speed += self.aceleration
             self.rect.x += self.speed
         if _akey[pygame.K_a]:
-            self.speed -= self.aceleration
             self.rect.x -= self.speed
         if _akey[pygame.K_s]:
-            self.speed += self.aceleration
             self.rect.y += self.speed
         if _akey[pygame.K_w]:
-            self.speed -= self.aceleration
             self.rect.y -= self.speed
 
     def colisao(self):
