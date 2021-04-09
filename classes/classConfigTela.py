@@ -6,8 +6,6 @@ from uteis.style import CINZA_CLARO
 
 class ConfigTela:
     diretorioImg = 'images'
-
-
     def __init__(self):
         pygame.init()
         self.display = pygame.display.set_mode([840, 480])
@@ -16,6 +14,15 @@ class ConfigTela:
         self.clock = pygame.time.Clock()
         self.timer = 0
         self.imagemfundo = None
+        self.pontuacao = 110
+
+    def score(self):
+        pygame.font.init()
+        self.fontObj = pygame.font.SysFont('freesansbold.ttf', 50)
+        self.textSurfaceObj = self.fontObj.render(f'Score: {self.pontuacao}', True, (255, 255, 255))
+        # self.textRectObj = self.textSurfaceObj.get_rect()
+        # self.textRectObj.center = (200, 100)
+        self.display.blit(self.textSurfaceObj, (620, 10))
 
     def setaimagemfundo(self, _aobjgroup):
         self.imagemfundo = pygame.sprite.Sprite(_aobjgroup)

@@ -12,6 +12,7 @@ from classes.classShot import Shot
 
 gameover = False
 
+
 if __name__ == '__main__':
     tela = ConfigTela()
     som = Som()
@@ -19,10 +20,8 @@ if __name__ == '__main__':
     asteroidGroup = pygame.sprite.Group()
     shotGroup = pygame.sprite.Group()
     tela.setaimagemfundo(objectGroup)
-
     ship = MotherShip(objectGroup)
     asteroid = Asteroid(objectGroup, asteroidGroup)
-    timer = 0
     while True:
         tela.clock.tick(60) # frames por segundo
 
@@ -33,9 +32,10 @@ if __name__ == '__main__':
                 elif event.key == pygame.K_SPACE:
                     newShot = Shot.atira(objectGroup, shotGroup)
                     newShot.rect.center = ship.rect.center
+                elif event.key == pygame.K_p:
+                    gameover = not gameover
 
         if not gameover:
-            tela.corTelaDefault()
             objectGroup.update()
             objectGroup.draw(tela.display)
             tela.timer += 1
@@ -47,7 +47,10 @@ if __name__ == '__main__':
             collisions = pygame.sprite.spritecollide(ship, asteroidGroup, False, pygame.sprite.collide_mask)
             if collisions:
                 gameover = True
-            pygame.sprite.groupcollide(shotGroup, asteroidGroup, True, True, pygame.sprite.collide_mask)
+            hit = pygame.sprite.groupcollide(shotGroup, asteroidGroup, True, True, pygame.sprite.collide_mask)
+            if hit:
+                tela.pontuacao += 15
 
             # pygame.key.get_pressed()  # Captura os eventos de tecla pressionada
+            tela.score()
             pygame.display.update()
