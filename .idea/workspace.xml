@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f284df0d-619d-49c4-83c8-16556f985316" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/classes/classAsteroid.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/classShot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/asteroides.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/fundo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/mothership.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/shot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/classAsteroid.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/classAsteroid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/classConfigTela.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/classConfigTela.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/classNave.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/classNave.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/silencer.wav" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +37,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Leo\Documents\GitHub\Kill-The-Rocks\images" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -75,6 +87,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

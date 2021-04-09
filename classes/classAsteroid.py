@@ -14,7 +14,7 @@ class Asteroid(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(self.image, [100, 100])
         self.rect = pygame.Rect(900, random.randint(15, 440), 100, 100)
         #self.ataqueSom = pygame.mixer.Sound(self.carregaataque())
-        self.speed = 5
+        self.speed = random.randint(1, 5)
 
     def update(self, *args, **kwargs) -> None:
         self.rect.x -= self.speed
@@ -25,5 +25,10 @@ class Asteroid(pygame.sprite.Sprite):
         print(f'{self.__class__.__name__} foi deletado')
 
     @classmethod
+    def verificanovoasteroide(cls, _aobjectgroup, _aasteroidgroup):
+        if random.random() < 0.5:
+            return cls(_aobjectgroup, _aasteroidgroup)
+
+    @classmethod
     def spriteasteroid(cls):
-        return Path().cwd().as_posix() + '/' + cls.diretorioImg + '/naveprincipal.png'
+        return Path().cwd().as_posix() + '/' + cls.diretorioImg + '/asteroides.png'

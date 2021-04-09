@@ -1,7 +1,6 @@
 import pygame
 from pathlib import Path
 
-
 class MotherShip(pygame.sprite.Sprite):
     diretorioImg = 'images'
     diretorioSom = 'sounds'
@@ -20,11 +19,13 @@ class MotherShip(pygame.sprite.Sprite):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE]:
             self.somataque()
+
         if (keys[pygame.K_d]) or (keys[pygame.K_a]) or (keys[pygame.K_w]) or (keys[pygame.K_s]):
             self.movimentonave(keys)
         else:
             self.speed *= 0.95
         self.verificacolisao()
+
 
     def movimentonave(self, _akey):
         self.speed += self.aceleration
@@ -58,8 +59,8 @@ class MotherShip(pygame.sprite.Sprite):
 
     @classmethod
     def dirsomataque(cls):
-        return Path().cwd().as_posix() + '/'+cls.diretorioSom+'/silencer.wav'
+        return Path().cwd().as_posix() + '/'+cls.diretorioSom+'/silencer.ogg'
 
     @classmethod
     def spritenave(cls):
-        return Path().cwd().as_posix() + '/'+cls.diretorioImg+'/naveprincipal.png'
+        return Path().cwd().as_posix() + '/'+cls.diretorioImg+'/mothership.png'
